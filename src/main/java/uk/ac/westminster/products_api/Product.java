@@ -10,6 +10,6 @@ public class Product {
         this.price = price;
     }
     public Long getId() { return id; }
-    public String getName() { return name; }
+    public String getName() { return name; } /*Jackson looks for a public getX() method for each field; with no getName() there is nothing for it to call, so the field is skipped.*/
     public double getPrice() { return price; }
 }
