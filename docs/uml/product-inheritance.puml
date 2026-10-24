@@ -1,0 +1,41 @@
+
+@startuml
+
+title Product Inheritance Diagram
+
+class Product {
+    - id: Long
+    - name: String
+    - price: double
+    + Product()
+    + Product(id: Long, name: String, price: double)
+    + getId(): Long
+    + getName(): String
+    + getPrice(): double
+    + setId(id: Long): void
+    + setName(name: String): void
+    + setPrice(price: double): void
+}
+
+class DigitalProduct {
+    - downloadUrl: String
+    - fileSizeMB: double
+    + DigitalProduct()
+    + DigitalProduct(id, name, price, downloadUrl, fileSizeMB)
+    + getDownloadUrl(): String
+    + getFileSizeMB(): double
+}
+
+class PhysicalProduct {
+    - weightKg: double
+    - dimensions: String
+    + PhysicalProduct()
+    + PhysicalProduct(id, name, price, weightKg, dimensions)
+    + getWeightKg(): double
+    + getDimensions(): String
+}
+
+Product <|-- DigitalProduct
+Product <|-- PhysicalProduct
+
+@enduml

@@ -10,7 +10,26 @@ import java.util.Optional;
 public class ProductService {
 
     private List<Product> products = new ArrayList<>();
-    private Long nextId = 1L;
+    private Long nextId = 3L;
+
+    // Constructor: Add sample digital and physical products
+    public ProductService() {
+        products.add(new DigitalProduct(
+                1L,
+                "Java Programming E-Book",
+                1500.00,
+                "https://example.com/java-book",
+                25.5
+        ));
+
+        products.add(new PhysicalProduct(
+                2L,
+                "Mechanical Keyboard",
+                8500.00,
+                1.2,
+                "44 x 13 x 3 cm"
+        ));
+    }
 
     // Get all products
     public List<Product> getAllProducts() {
